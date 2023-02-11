@@ -1,6 +1,16 @@
+<script>
+	let name = 'new';
+	let isInCreation = false;
+	import { page } from '$app/stores';
+</script>
+
 <div class="workspace-navigation">
 	<h2>workspaces</h2>
-	<a class="look-like-button" href="/workspaces/create">new</a>
+	{#if $page.url.pathname == '/workspaces'}
+		<a class="look-like-button" href="/workspaces/create">new</a>
+	{:else}
+		<a class="look-like-button" href="/workspaces">back</a>
+	{/if}
 </div>
 
 <slot />
